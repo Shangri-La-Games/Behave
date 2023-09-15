@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmn124e2k2dad"]
+
+[ext_resource type="Script" path="res://addons/behave/src/gui/engine/leaf/leaf_ui.gd" id="1_xcmv6"]
+
+[node name="GraphNode" type="GraphNode"]
+custom_minimum_size = Vector2(160, 50)
+offset_right = 367.0
+offset_bottom = 85.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+title = "TITLE"
+show_close = true
+comment = true
+script = ExtResource("1_xcmv6")
+color = "#9AEBED"

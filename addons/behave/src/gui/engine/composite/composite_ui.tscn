@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxlbh7wwppklg"]
+
+[ext_resource type="Script" path="res://addons/behave/src/gui/engine/composite/composite_ui.gd" id="1_h52vg"]
+
+[node name="GraphNode" type="GraphNode"]
+custom_minimum_size = Vector2(160, 50)
+offset_right = 160.0
+offset_bottom = 85.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+title = "Title"
+show_close = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(0, 0, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(0, 0, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_h52vg")
+color = "#A275E3"
+
+[node name="Slot_0" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Add" type="Button" parent="Slot_0"]
+layout_mode = 2
+text = "+"
+
+[node name="Remove" type="Button" parent="Slot_0"]
+layout_mode = 2
+text = "-"

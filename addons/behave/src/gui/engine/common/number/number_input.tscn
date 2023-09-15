@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://s4el21h6j3lq"]
+
+[ext_resource type="Script" path="res://addons/behave/src/gui/engine/common/number/number_input.gd" id="1_vrno2"]
+
+[node name="NumberInput" type="HBoxContainer"]
+script = ExtResource("1_vrno2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Count: "
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 2
+rounded = true
+allow_greater = true

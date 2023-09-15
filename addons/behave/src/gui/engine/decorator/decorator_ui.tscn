@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmn124e2k2dad"]
+
+[ext_resource type="Script" path="res://addons/behave/src/gui/engine/decorator/decorator_ui.gd" id="1_hdau7"]
+
+[node name="GraphNode" type="GraphNode"]
+custom_minimum_size = Vector2(160, 50)
+offset_right = 160.0
+offset_bottom = 54.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+title = "Title"
+show_close = true
+comment = true
+script = ExtResource("1_hdau7")
+color = "#FA86BE"

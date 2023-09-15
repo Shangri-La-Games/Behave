@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://di3gpsxvvwqmv"]
+
+[ext_resource type="Script" path="res://addons/behave/src/gui/graph_editor.gd" id="1_56jcq"]
+[ext_resource type="Script" path="res://addons/behave/src/gui/context_menu.gd" id="2_a0jfe"]
+
+[node name="GraphEdit" type="GraphEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_56jcq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ContextMenu" type="MenuButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Add new"
+item_count = 7
+popup/item_0/text = "Root"
+popup/item_0/id = 0
+popup/item_1/text = "Inverter"
+popup/item_1/id = 1
+popup/item_2/text = "Repeater"
+popup/item_2/id = 2
+popup/item_3/text = "Selector"
+popup/item_3/id = 3
+popup/item_4/text = "Parallel"
+popup/item_4/id = 4
+popup/item_5/text = "Sequence"
+popup/item_5/id = 5
+popup/item_6/text = "Leaf"
+popup/item_6/id = 6
+script = ExtResource("2_a0jfe")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="Hint" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2

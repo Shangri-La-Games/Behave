@@ -1,0 +1,181 @@
+[gd_resource type="Resource" script_class="BehaveResource" load_steps=2 format=3 uid="uid://dbijm26ulstjg"]
+
+[ext_resource type="Script" path="res://addons/behave/src/gui/behave_resource.gd" id="1_wvq8m"]
+
+[resource]
+script = ExtResource("1_wvq8m")
+tree = {
+"connection": Array[Dictionary]([{
+"from": &"Sequence",
+"from_port": 0,
+"to": &"Task",
+"to_port": 0
+}, {
+"from": &"Sequence",
+"from_port": 1,
+"to": &"Wait",
+"to_port": 0
+}, {
+"from": &"Repeater",
+"from_port": 0,
+"to": &"Sequence",
+"to_port": 0
+}, {
+"from": &"Root",
+"from_port": 0,
+"to": &"Repeater",
+"to_port": 0
+}]),
+"elements": [{
+"child": [{
+"child": [{
+"child": [],
+"data": {
+"callable": "print_hello",
+"offset": Vector2(880, 220)
+},
+"name": &"Task",
+"type": 6
+}, {
+"child": [],
+"data": {
+"offset": Vector2(880, 420),
+"wait_count": 100
+},
+"name": &"Wait",
+"type": 7
+}],
+"data": {
+"offset": Vector2(580, 160),
+"ports": 2
+},
+"name": &"Sequence",
+"type": 5
+}],
+"data": {
+"count": 2,
+"offset": Vector2(180, 160)
+},
+"name": &"Repeater",
+"type": 2
+}, {
+"child": [{
+"child": [{
+"child": [{
+"child": [],
+"data": {
+"callable": "print_hello",
+"offset": Vector2(880, 220)
+},
+"name": &"Task",
+"type": 6
+}, {
+"child": [],
+"data": {
+"offset": Vector2(880, 420),
+"wait_count": 100
+},
+"name": &"Wait",
+"type": 7
+}],
+"data": {
+"offset": Vector2(580, 160),
+"ports": 2
+},
+"name": &"Sequence",
+"type": 5
+}],
+"data": {
+"count": 2,
+"offset": Vector2(180, 160)
+},
+"name": &"Repeater",
+"type": 2
+}],
+"data": {
+"offset": Vector2(-60, 180)
+},
+"name": &"Root",
+"type": 0
+}, {
+"child": [],
+"data": {
+"offset": Vector2(880, 420),
+"wait_count": 100
+},
+"name": &"Wait",
+"type": 7
+}, {
+"child": [],
+"data": {
+"callable": "print_hello",
+"offset": Vector2(880, 220)
+},
+"name": &"Task",
+"type": 6
+}, {
+"child": [{
+"child": [],
+"data": {
+"callable": "print_hello",
+"offset": Vector2(880, 220)
+},
+"name": &"Task",
+"type": 6
+}, {
+"child": [],
+"data": {
+"offset": Vector2(880, 420),
+"wait_count": 100
+},
+"name": &"Wait",
+"type": 7
+}],
+"data": {
+"offset": Vector2(580, 160),
+"ports": 2
+},
+"name": &"Sequence",
+"type": 5
+}],
+"root": {
+"child": [{
+"child": [{
+"child": [{
+"child": [],
+"data": {
+"callable": "print_hello",
+"offset": Vector2(880, 220)
+},
+"name": &"Task",
+"type": 6
+}, {
+"child": [],
+"data": {
+"offset": Vector2(880, 420),
+"wait_count": 100
+},
+"name": &"Wait",
+"type": 7
+}],
+"data": {
+"offset": Vector2(580, 160),
+"ports": 2
+},
+"name": &"Sequence",
+"type": 5
+}],
+"data": {
+"count": 2,
+"offset": Vector2(180, 160)
+},
+"name": &"Repeater",
+"type": 2
+}],
+"data": {
+"offset": Vector2(-60, 180)
+},
+"name": &"Root",
+"type": 0
+}
+}
