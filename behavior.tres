@@ -44,17 +44,25 @@ tree = {
 "elements": [{
 "child": [],
 "data": {
-"offset": Vector2(1060, 80),
-"wait_count": 200
+"callable": "print_hello",
+"offset": Vector2(1640, 300)
 },
-"name": &"22591125391545",
-"type": 7
+"name": &"_GraphNode_18921",
+"type": 6
+}, {
+"child": [],
+"data": {
+"callable": "print_world",
+"offset": Vector2(1640, 440)
+},
+"name": &"Leaf",
+"type": 6
 }, {
 "child": [{
 "child": [{
 "child": [],
 "data": {
-"offset": Vector2(1060, 80),
+"offset": Vector2(1140, 120),
 "wait_count": 200
 },
 "name": &"22591125391545",
@@ -64,7 +72,7 @@ tree = {
 "child": [],
 "data": {
 "callable": "print_hello",
-"offset": Vector2(1280, 220)
+"offset": Vector2(1640, 300)
 },
 "name": &"_GraphNode_18921",
 "type": 6
@@ -72,7 +80,7 @@ tree = {
 "child": [],
 "data": {
 "callable": "print_world",
-"offset": Vector2(1280, 320)
+"offset": Vector2(1640, 440)
 },
 "name": &"Leaf",
 "type": 6
@@ -81,27 +89,27 @@ tree = {
 "child": [],
 "data": {
 "callable": "print_break",
-"offset": Vector2(1520, 440)
+"offset": Vector2(2200, 640)
 },
 "name": &"_GraphNode_22768",
 "type": 6
 }],
 "data": {
 "count": 2,
-"offset": Vector2(1280, 440)
+"offset": Vector2(1640, 640)
 },
 "name": &"Decorator",
 "type": 2
 }],
 "data": {
-"offset": Vector2(1060, 220),
+"offset": Vector2(1360, 320),
 "ports": 3
 },
 "name": &"Composite",
 "type": 4
 }],
 "data": {
-"offset": Vector2(820, 80),
+"offset": Vector2(840, 60),
 "ports": 2
 },
 "name": &"22620871393193",
@@ -113,90 +121,9 @@ tree = {
 "name": &"Root",
 "type": 0
 }, {
-"child": [{
 "child": [],
 "data": {
-"callable": "print_hello",
-"offset": Vector2(1280, 220)
-},
-"name": &"_GraphNode_18921",
-"type": 6
-}, {
-"child": [],
-"data": {
-"callable": "print_world",
-"offset": Vector2(1280, 320)
-},
-"name": &"Leaf",
-"type": 6
-}, {
-"child": [{
-"child": [],
-"data": {
-"callable": "print_break",
-"offset": Vector2(1520, 440)
-},
-"name": &"_GraphNode_22768",
-"type": 6
-}],
-"data": {
-"count": 2,
-"offset": Vector2(1280, 440)
-},
-"name": &"Decorator",
-"type": 2
-}],
-"data": {
-"offset": Vector2(1060, 220),
-"ports": 3
-},
-"name": &"Composite",
-"type": 4
-}, {
-"child": [],
-"data": {
-"callable": "print_hello",
-"offset": Vector2(1280, 220)
-},
-"name": &"_GraphNode_18921",
-"type": 6
-}, {
-"child": [],
-"data": {
-"callable": "print_world",
-"offset": Vector2(1280, 320)
-},
-"name": &"Leaf",
-"type": 6
-}, {
-"child": [],
-"data": {
-"callable": "print_break",
-"offset": Vector2(1520, 440)
-},
-"name": &"_GraphNode_22768",
-"type": 6
-}, {
-"child": [{
-"child": [],
-"data": {
-"callable": "print_break",
-"offset": Vector2(1520, 440)
-},
-"name": &"_GraphNode_22768",
-"type": 6
-}],
-"data": {
-"count": 2,
-"offset": Vector2(1280, 440)
-},
-"name": &"Decorator",
-"type": 2
-}, {
-"child": [{
-"child": [],
-"data": {
-"offset": Vector2(1060, 80),
+"offset": Vector2(1140, 120),
 "wait_count": 200
 },
 "name": &"22591125391545",
@@ -206,7 +133,7 @@ tree = {
 "child": [],
 "data": {
 "callable": "print_hello",
-"offset": Vector2(1280, 220)
+"offset": Vector2(1640, 300)
 },
 "name": &"_GraphNode_18921",
 "type": 6
@@ -214,7 +141,7 @@ tree = {
 "child": [],
 "data": {
 "callable": "print_world",
-"offset": Vector2(1280, 320)
+"offset": Vector2(1640, 440)
 },
 "name": &"Leaf",
 "type": 6
@@ -223,27 +150,100 @@ tree = {
 "child": [],
 "data": {
 "callable": "print_break",
-"offset": Vector2(1520, 440)
+"offset": Vector2(2200, 640)
 },
 "name": &"_GraphNode_22768",
 "type": 6
 }],
 "data": {
 "count": 2,
-"offset": Vector2(1280, 440)
+"offset": Vector2(1640, 640)
 },
 "name": &"Decorator",
 "type": 2
 }],
 "data": {
-"offset": Vector2(1060, 220),
+"offset": Vector2(1360, 320),
+"ports": 3
+},
+"name": &"Composite",
+"type": 4
+}, {
+"child": [],
+"data": {
+"callable": "print_break",
+"offset": Vector2(2200, 640)
+},
+"name": &"_GraphNode_22768",
+"type": 6
+}, {
+"child": [{
+"child": [],
+"data": {
+"callable": "print_break",
+"offset": Vector2(2200, 640)
+},
+"name": &"_GraphNode_22768",
+"type": 6
+}],
+"data": {
+"count": 2,
+"offset": Vector2(1640, 640)
+},
+"name": &"Decorator",
+"type": 2
+}, {
+"child": [{
+"child": [],
+"data": {
+"offset": Vector2(1140, 120),
+"wait_count": 200
+},
+"name": &"22591125391545",
+"type": 7
+}, {
+"child": [{
+"child": [],
+"data": {
+"callable": "print_hello",
+"offset": Vector2(1640, 300)
+},
+"name": &"_GraphNode_18921",
+"type": 6
+}, {
+"child": [],
+"data": {
+"callable": "print_world",
+"offset": Vector2(1640, 440)
+},
+"name": &"Leaf",
+"type": 6
+}, {
+"child": [{
+"child": [],
+"data": {
+"callable": "print_break",
+"offset": Vector2(2200, 640)
+},
+"name": &"_GraphNode_22768",
+"type": 6
+}],
+"data": {
+"count": 2,
+"offset": Vector2(1640, 640)
+},
+"name": &"Decorator",
+"type": 2
+}],
+"data": {
+"offset": Vector2(1360, 320),
 "ports": 3
 },
 "name": &"Composite",
 "type": 4
 }],
 "data": {
-"offset": Vector2(820, 80),
+"offset": Vector2(840, 60),
 "ports": 2
 },
 "name": &"22620871393193",
@@ -254,7 +254,7 @@ tree = {
 "child": [{
 "child": [],
 "data": {
-"offset": Vector2(1060, 80),
+"offset": Vector2(1140, 120),
 "wait_count": 200
 },
 "name": &"22591125391545",
@@ -264,7 +264,7 @@ tree = {
 "child": [],
 "data": {
 "callable": "print_hello",
-"offset": Vector2(1280, 220)
+"offset": Vector2(1640, 300)
 },
 "name": &"_GraphNode_18921",
 "type": 6
@@ -272,7 +272,7 @@ tree = {
 "child": [],
 "data": {
 "callable": "print_world",
-"offset": Vector2(1280, 320)
+"offset": Vector2(1640, 440)
 },
 "name": &"Leaf",
 "type": 6
@@ -281,27 +281,27 @@ tree = {
 "child": [],
 "data": {
 "callable": "print_break",
-"offset": Vector2(1520, 440)
+"offset": Vector2(2200, 640)
 },
 "name": &"_GraphNode_22768",
 "type": 6
 }],
 "data": {
 "count": 2,
-"offset": Vector2(1280, 440)
+"offset": Vector2(1640, 640)
 },
 "name": &"Decorator",
 "type": 2
 }],
 "data": {
-"offset": Vector2(1060, 220),
+"offset": Vector2(1360, 320),
 "ports": 3
 },
 "name": &"Composite",
 "type": 4
 }],
 "data": {
-"offset": Vector2(820, 80),
+"offset": Vector2(840, 60),
 "ports": 2
 },
 "name": &"22620871393193",
