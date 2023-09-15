@@ -6,7 +6,6 @@ allowing them to work in parallel.
 """
 
 func tick() -> Behave.StateEnum:
-	print("Ticking %s :: %s" % [name, status])
 	ticked = true
 	
 	if status != Behave.StateEnum.RUNNING:

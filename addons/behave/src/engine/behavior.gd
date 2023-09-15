@@ -5,10 +5,9 @@ var status := Behave.StateEnum.RUNNING
 
 var ticked: bool = false
 
-func reset() -> Behave.StateEnum:
+func reset() -> void:
 	ticked = false
 	status = Behave.StateEnum.RUNNING
-	return status
 
 func success() -> Behave.StateEnum:
 	status = Behave.StateEnum.SUCCESS

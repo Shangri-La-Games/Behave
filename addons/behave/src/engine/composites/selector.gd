@@ -6,7 +6,6 @@ until one of them returns SUCCESS, RUNNING or FAILURE.
 If all children return the failure state, the priority also returns FAILURE.
 """
 func tick() -> Behave.StateEnum:
-	print("Ticking %s :: %s" % [name, status])
 	ticked = true
 	
 	if status != Behave.StateEnum.RUNNING:

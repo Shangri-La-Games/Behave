@@ -9,17 +9,16 @@ class_name BehaviorTree extends Node
 @export_enum("Physics Process", "Process")
 var process_type: String = "Process"
 
-var behavior: Behavior = null
+var runtime_behavior: Behavior = null
 
 func _enter_tree():
-	behavior = create_tree(
+	runtime_behavior = create_tree(
 		res.tree.get("root", {}),
 		blackboard,
 	)
 	
 	if not debug: return
-	if not behavior: print("Tree not found %s" % res.tree)
-	if behavior: print("Entering tree '%s'" % behavior.name)
+	if not runtime_behavior: print("Tree not found %s" % res.tree)
 	
 func _process(delta: float) -> void:
 	if process_type != "Process":
@@ -38,11 +37,11 @@ func process_tree(delta: float):
 	tick()
 
 func tick():
-	if not behavior: return
-	var status = behavior.tick()
+	if not runtime_behavior: return
+	var status = runtime_behavior.tick()
 
-	if status !=  Behave.StateEnum.RUNNING:
-		behavior.reset()
+	if status != Behave.StateEnum.RUNNING:
+		runtime_behavior.reset()
 
 func create_tree(element: Dictionary, target: Node) -> Behavior:
 	if element.is_empty():

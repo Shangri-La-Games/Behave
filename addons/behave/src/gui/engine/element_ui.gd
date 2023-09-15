@@ -20,6 +20,7 @@ func set_properties(properties: Dictionary):
 	self.title = properties.get("title", self.name)
 	
 	if not properties.has("ports"): return
+	
 	for i in range(properties.ports):
 		self.add_label()
 		self.add_output_slot()
@@ -46,6 +47,7 @@ func add_number_input(label: String, value: float) -> void:
 	var input: NumberInput = number_input.instantiate()
 	input.set_input_label(label)
 	input.set_input_value(value)
+	
 	self.add_child(input)
 	
 
@@ -53,6 +55,7 @@ func add_text_input(label: String, value: String) -> void:
 	var input: TextInput = text_input.instantiate()
 	input.set_input_label(label)
 	input.set_input_value(value)
+	
 	self.add_child(input)
 	
 func add_output_slot() -> void:

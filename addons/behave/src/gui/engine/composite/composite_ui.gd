@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func set_properties(properties: Dictionary):
 	self.add_input_slot()
+	
 	super.set_properties(properties)
 	
 func get_properties() -> Dictionary:

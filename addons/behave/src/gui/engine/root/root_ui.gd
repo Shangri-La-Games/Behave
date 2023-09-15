@@ -6,4 +6,5 @@ func _enter_tree() -> void:
 
 func set_properties(properties: Dictionary):
 	self.add_output_slot()
+	
 	super.set_properties(properties)

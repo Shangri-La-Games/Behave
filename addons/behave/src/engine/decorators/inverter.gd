@@ -5,7 +5,6 @@ The repeater repeats the same node untill RUNNING.
 This node ignores FAILED and SUCCESS responses and retick the child instead
 """
 func tick() -> Behave.StateEnum:
-	print("Ticking %s :: %s" % [name, status])
 	ticked = true
 	
 	if status != Behave.StateEnum.RUNNING:

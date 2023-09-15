@@ -10,16 +10,16 @@ var _tick_count = 0
 
 func set_properties(properties: Dictionary, blackboard: Node):
 	super.set_properties(properties, blackboard)
+	
 	self._count = properties.count
 	self._tick_count = self._count
 
-func reset() -> Behave.StateEnum:
+func reset() -> void:
 	super.reset()
+	
 	self._tick_count = self._count
-	return status
 
 func tick() -> Behave.StateEnum:
-	print("Ticking %s :: %s" % [name, status])
 	ticked = true
 	
 	if self._count > 0 and self._tick_count == 0:

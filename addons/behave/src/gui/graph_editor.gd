@@ -12,6 +12,7 @@ var control_node = null
 
 func _ready() -> void:
 	_reload()
+	
 	self.popup_request.connect(self._on_popup_request)
 	self.context_menu.get_popup().id_pressed.connect(self._on_menuitem_pressed)
 	
@@ -22,6 +23,7 @@ func _ready() -> void:
 
 func _reload():
 	if not self.control_node: return
+	
 	_build_tree_from_source()
 	
 func _clear():
@@ -65,6 +67,7 @@ var _click_position: Vector2
 
 func _on_popup_request(position: Vector2) -> void:
 	self._click_position = get_local_mouse_position()
+	
 	var popup_menu = context_menu.get_popup()
 	var context_position = get_global_mouse_position()
 	popup_menu.popup(Rect2(context_position, Vector2(1, 1)))
@@ -73,6 +76,7 @@ func _on_menuitem_pressed(id: int) -> void:
 	var offset = (self.scroll_offset / self.zoom) + (self._click_position / self.zoom)
 	var element_ui = ElementBuilder.get_element_ui(id)
 	element_ui.set_properties({"offset": offset})
+	
 	add_child(element_ui)
 
 func _on_connection_request(from: StringName, from_port: int, to: StringName, to_port: int) -> void:
@@ -126,6 +130,7 @@ func _on_save_request():
 func _find_element_by_name(elements, name) -> Dictionary:
 	for i in elements:
 		if i.name == name: return i
+	
 	return {}
 	
 func _build_tree(root, connections: Array, elements: Array) -> void:
@@ -154,6 +159,7 @@ func remove_slot(name, slot):
 	for i in get_connection_list():
 		if  i.from == name and i.from_port == slot:
 			disconnect_node(i.from, i.from_port, i.to, i.to_port)
+	
 	return
 	
 func delete_child(element: GraphNode) -> void:
@@ -162,4 +168,5 @@ func delete_child(element: GraphNode) -> void:
 			disconnect_node(i.from, i.from_port, i.to, i.to_port)
 		if  element.name == i.to:
 			disconnect_node(i.from, i.from_port, i.to, i.to_port)
+	
 	element.queue_free()

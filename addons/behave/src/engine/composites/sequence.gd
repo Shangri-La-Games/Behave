@@ -7,7 +7,6 @@ return the success state, the sequence also returns SUCCESS.
 """
 
 func tick() -> Behave.StateEnum:
-#	print("Ticking %s :: %s" % [name, status])
 	ticked = true
 	
 	if status != Behave.StateEnum.RUNNING:

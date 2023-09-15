@@ -59,12 +59,10 @@ func _edit(object: Object) -> void:
 
 func _load_scripts() -> void:
 	for key in _scripts.keys():
-		print(key, _scripts[key])
 		if not ResourceLoader.exists(_scripts[key]):
 			return
 		add_autoload_singleton(key, _scripts[key])
 
 func _remove_scripts() -> void:
 	for key in _scripts.keys():
-		print(key, _scripts[key])
 		remove_autoload_singleton(key)

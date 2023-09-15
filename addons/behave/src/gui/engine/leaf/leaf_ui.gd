@@ -17,7 +17,7 @@ func set_properties(properties: Dictionary):
 	elif type == Behave.ElementTypeEnum.WAIT:
 		# Add input field to enter wait time
 		self._wait_count = properties.get("wait_count", "0")
-		self.add_number_input("Count: ", self._wait_count)
+		self.add_number_input("Count (ms): ", self._wait_count)
 	else:
 		self.add_label()
 
