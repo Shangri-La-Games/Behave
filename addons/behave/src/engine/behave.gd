@@ -6,7 +6,7 @@ enum StateEnum {
 	RUNNING,
 }
 
-enum ElementTypeEnum {
+enum BehaviorTypeEnum {
 	ROOT,
 	INVERTER,
 	REPEATER,
@@ -17,22 +17,22 @@ enum ElementTypeEnum {
 	WAIT
 }
 
-static var elements = {}
-static func get_elements() -> Dictionary:
-	if not elements.is_empty(): return elements
+static var behaviors = {}
+static func get_behaviors() -> Dictionary:
+	if not behaviors.is_empty(): return behaviors
 	
 	# Decorator
-	elements[ElementTypeEnum.ROOT] = Root
-	elements[ElementTypeEnum.INVERTER] = Inverter
-	elements[ElementTypeEnum.REPEATER] = Repeater
+	behaviors[BehaviorTypeEnum.ROOT] = Root
+	behaviors[BehaviorTypeEnum.INVERTER] = Inverter
+	behaviors[BehaviorTypeEnum.REPEATER] = Repeater
 	
 	# Composite
-	elements[ElementTypeEnum.SELECTOR] = Selector
-	elements[ElementTypeEnum.PARALLEL] = Parallel
-	elements[ElementTypeEnum.SEQUENCE] = Sequence
+	behaviors[BehaviorTypeEnum.SELECTOR] = Selector
+	behaviors[BehaviorTypeEnum.PARALLEL] = Parallel
+	behaviors[BehaviorTypeEnum.SEQUENCE] = Sequence
 	
 	# Leaf
-	elements[ElementTypeEnum.TASK] = Task
-	elements[ElementTypeEnum.WAIT] = Wait
+	behaviors[BehaviorTypeEnum.TASK] = Task
+	behaviors[BehaviorTypeEnum.WAIT] = Wait
 	
-	return elements
+	return behaviors

@@ -1,13 +1,12 @@
 @tool
 class_name ElementUI extends GraphNode
 
-
 @export var color: String = BehaveUI.get_color("ROOT")
 
 var number_input = preload("res://addons/behave/src/gui/engine/common/number/number_input.tscn")
 var text_input = preload("res://addons/behave/src/gui/engine/common/text/text_input.tscn")
 
-var type: Behave.ElementTypeEnum
+var type: Behave.BehaviorTypeEnum
 
 func _ready():
 	self.show_close = true
@@ -17,10 +16,9 @@ func _ready():
 
 func set_properties(properties: Dictionary):
 	self.position_offset = properties.offset
-	self.title = properties.get("title", self.name)
+	self.title = BehaveUI.element_dict.find_key(self.type)
 	
 	if not properties.has("ports"): return
-	
 	for i in range(properties.ports):
 		self.add_label()
 		self.add_output_slot()

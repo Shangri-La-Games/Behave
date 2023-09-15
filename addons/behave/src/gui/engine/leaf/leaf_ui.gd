@@ -10,11 +10,11 @@ func _enter_tree() -> void:
 func set_properties(properties: Dictionary):
 	super.set_properties(properties)
 
-	if type == Behave.ElementTypeEnum.TASK:
+	if type == Behave.BehaviorTypeEnum.TASK:
 		# Add input field to enter function name
 		self._function_name = properties.get("callable", "")
 		self.add_text_input("Function Name: ", self._function_name)
-	elif type == Behave.ElementTypeEnum.WAIT:
+	elif type == Behave.BehaviorTypeEnum.WAIT:
 		# Add input field to enter wait time
 		self._wait_count = properties.get("wait_count", "0")
 		self.add_number_input("Count (ms): ", self._wait_count)
@@ -26,9 +26,9 @@ func set_properties(properties: Dictionary):
 func get_properties() -> Dictionary:
 	var property =  {"offset": position_offset}
 	
-	if type == Behave.ElementTypeEnum.TASK:
+	if type == Behave.BehaviorTypeEnum.TASK:
 		property["callable"] = self._function_name
-	elif type == Behave.ElementTypeEnum.WAIT:
+	elif type == Behave.BehaviorTypeEnum.WAIT:
 		property["wait_count"] = self._wait_count
 	
 	return property

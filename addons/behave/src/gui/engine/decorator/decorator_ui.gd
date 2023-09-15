@@ -10,7 +10,7 @@ func set_properties(properties: Dictionary):
 	super.set_properties(properties)
 	self._count = properties.get("count", 1)
 	
-	if type == Behave.ElementTypeEnum.REPEATER:
+	if type == Behave.BehaviorTypeEnum.REPEATER:
 		self.add_number_input("Count: ", self._count)
 	else:
 		self.add_label()
@@ -23,7 +23,7 @@ func number_changed(value: float):
 func get_properties() -> Dictionary:
 	var property =  {"offset": position_offset}
 	
-	if type == Behave.ElementTypeEnum.REPEATER:
+	if type == Behave.BehaviorTypeEnum.REPEATER:
 		property["count"] = self._count
 	
 	return property

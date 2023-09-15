@@ -12,7 +12,7 @@ var process_type: String = "Process"
 var runtime_behavior: Behavior = null
 
 func _enter_tree():
-	runtime_behavior = create_tree(
+	runtime_behavior = create_behavior_tree(
 		res.tree.get("root", {}),
 		blackboard,
 	)
@@ -43,16 +43,16 @@ func tick():
 	if status != Behave.StateEnum.RUNNING:
 		runtime_behavior.reset()
 
-func create_tree(element: Dictionary, target: Node) -> Behavior:
-	if element.is_empty():
+func create_behavior_tree(behavior: Dictionary, target: Node) -> Behavior:
+	if behavior.is_empty():
 		return null
+	
+	var current = Behave.get_behaviors().get(behavior.type).new()
+	current.name = behavior.name
+	current.set_properties(behavior.data, target)
 
-	var current = Behave.get_elements().get(element.type).new()
-	current.name = element.name
-	current.set_properties(element.data, target)
-
-	for child in element.child:
-		var child_element = create_tree(child, target)
+	for child in behavior.child:
+		var child_element = create_behavior_tree(child, target)
 		if current is Composite:
 			current.children.append(child_element)
 		elif current is Decorator:

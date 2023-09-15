@@ -8,6 +8,7 @@ var _scripts: Dictionary = {
 	"ElementBuilder": "res://addons/behave/src/gui/engine/element_builder.gd"
 }
 
+var _editor: Node
 var _graph_editor: GraphEditor
 var _graph_editor_init: bool
 var _graph_editor_button: Button
@@ -23,9 +24,10 @@ func _enter_tree() -> void:
 
 	self._graph_editor_init = true
 	if not self._graph_editor:
-		self._graph_editor = load(self._graph_editor_path).instantiate()
+		self._editor = load(self._graph_editor_path).instantiate()
+		self._graph_editor = self._editor.get_node("GraphEdit")
 
-	self._graph_editor_button = add_control_to_bottom_panel(self._graph_editor, "Behavior Editor")
+	self._graph_editor_button = add_control_to_bottom_panel(self._editor, "Behavior Editor")
 	self._make_visible(false)
 
 func _exit_tree() -> void:
@@ -34,9 +36,9 @@ func _exit_tree() -> void:
 	
 	# Remove GraphEditor panel
 	if self._graph_editor_init:
-		remove_control_from_bottom_panel(self._graph_editor)
-		self._graph_editor.queue_free()
-		self._graph_editor = null
+		remove_control_from_bottom_panel(self._editor)
+		self._editor.queue_free()
+		self._editor = null
 		
 	self._graph_editor_init = false
 
@@ -51,11 +53,10 @@ func _make_visible(visible: bool) -> void:
 		self._graph_editor_button.visible = visible
 
 func _edit(object: Object) -> void:
-	self._graph_editor.set_selected_tree(object, self)
-	if object == self._object_ref:
-		hide_bottom_panel()
-		self._object_ref = null
-		self._graph_editor.set_selected_tree(self._object_ref, self)
+	if not object: return
+	
+	if object is BehaviorTree:
+		self._graph_editor.set_selected_tree(object, self)
 
 func _load_scripts() -> void:
 	for key in _scripts.keys():

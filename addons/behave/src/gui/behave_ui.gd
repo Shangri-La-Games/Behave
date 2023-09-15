@@ -2,14 +2,14 @@
 extends Node
 
 const element_dict: Dictionary = {
-	"Root": Behave.ElementTypeEnum.ROOT,
-	"Inverter": Behave.ElementTypeEnum.INVERTER,
-	"Repeater": Behave.ElementTypeEnum.REPEATER,
-	"Selector": Behave.ElementTypeEnum.SELECTOR,
-	"Parallel": Behave.ElementTypeEnum.PARALLEL,
-	"Sequence": Behave.ElementTypeEnum.SEQUENCE,
-	"Task": Behave.ElementTypeEnum.TASK,
-	"Wait": Behave.ElementTypeEnum.WAIT
+	"Root": Behave.BehaviorTypeEnum.ROOT,
+	"Inverter": Behave.BehaviorTypeEnum.INVERTER,
+	"Repeater": Behave.BehaviorTypeEnum.REPEATER,
+	"Selector": Behave.BehaviorTypeEnum.SELECTOR,
+	"Parallel": Behave.BehaviorTypeEnum.PARALLEL,
+	"Sequence": Behave.BehaviorTypeEnum.SEQUENCE,
+	"Task": Behave.BehaviorTypeEnum.TASK,
+	"Wait": Behave.BehaviorTypeEnum.WAIT
 }
 
 const color_dict: Dictionary = {

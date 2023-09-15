@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" path="res://addons/behave/src/gui/engine/composite/composite_ui.gd" id="1_h52vg"]
 
-[node name="GraphNode" type="GraphNode"]
+[node name="Composite" type="GraphNode"]
 custom_minimum_size = Vector2(160, 50)
 offset_right = 160.0
 offset_bottom = 85.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
-title = "Title"
 show_close = true
 comment = true
 slot/0/left_enabled = false
