@@ -14,9 +14,17 @@ func get_element_by_node(node) -> ElementUI:
 
 func get_element_ui(type: int) -> ElementUI:
 	match type:
-		Behave.BehaviorTypeEnum.MUTE, Behave.BehaviorTypeEnum.INVERTER, Behave.BehaviorTypeEnum.REPEATER:
+		Behave.BehaviorTypeEnum.INVERTER:
 			return self._instantiate_ui(type, decorator_ui_path)
-		Behave.BehaviorTypeEnum.SELECTOR, Behave.BehaviorTypeEnum.PARALLEL, Behave.BehaviorTypeEnum.SEQUENCE:
+		Behave.BehaviorTypeEnum.REPEATER:
+			return self._instantiate_ui(type, decorator_ui_path)
+		Behave.BehaviorTypeEnum.MUTE:
+			return self._instantiate_ui(type, decorator_ui_path)
+		Behave.BehaviorTypeEnum.SELECTOR:
+			return self._instantiate_ui(type, composite_ui_path)
+		Behave.BehaviorTypeEnum.PARALLEL:
+			return self._instantiate_ui(type, composite_ui_path)
+		Behave.BehaviorTypeEnum.SEQUENCE:
 			return self._instantiate_ui(type, composite_ui_path)
 		_:
 			return self._instantiate_ui(type, leaf_ui_path)

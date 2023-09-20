@@ -4,6 +4,7 @@ class_name ElementUI extends GraphNode
 @export var color: String = BehaveUI.get_color("ROOT")
 
 var number_input = preload("res://addons/behave/src/gui/engine/common/number/number_input.tscn")
+var range_input = preload("res://addons/behave/src/gui/engine/common/range/range_input.tscn")
 var text_input = preload("res://addons/behave/src/gui/engine/common/text/text_input.tscn")
 
 var type: Behave.BehaviorTypeEnum
@@ -49,12 +50,19 @@ func add_number_input(label: String, value: float) -> void:
 	input.set_input_value(value)
 	
 	self.add_child(input)
-	
+
 
 func add_text_input(label: String, value: String) -> void:
 	var input: TextInput = text_input.instantiate()
 	input.set_input_label(label)
 	input.set_input_value(value)
+	
+	self.add_child(input)
+	
+func add_range_input(label: String, from_value: float, to_value: float) -> void:
+	var input: RangeInput = range_input.instantiate()
+	input.set_input_label(label)
+	input.set_input_range(from_value, to_value)
 	
 	self.add_child(input)
 	

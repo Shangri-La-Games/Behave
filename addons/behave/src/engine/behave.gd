@@ -15,7 +15,8 @@ enum BehaviorTypeEnum {
 	SEQUENCE,
 	TASK,
 	WAIT,
-	MUTE
+	MUTE,
+	WAIT_RAND
 }
 
 static var behaviors = {}
@@ -36,5 +37,6 @@ static func get_behaviors() -> Dictionary:
 	# Leaf
 	behaviors[BehaviorTypeEnum.TASK] = Task
 	behaviors[BehaviorTypeEnum.WAIT] = Wait
+	behaviors[BehaviorTypeEnum.WAIT_RAND] = WaitRandom
 	
 	return behaviors

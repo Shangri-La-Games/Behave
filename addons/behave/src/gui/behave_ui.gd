@@ -11,6 +11,7 @@ const element_dict: Dictionary = {
 	"Task": Behave.BehaviorTypeEnum.TASK,
 	"Wait": Behave.BehaviorTypeEnum.WAIT,
 	"Mute": Behave.BehaviorTypeEnum.MUTE,
+	"WaitRandom": Behave.BehaviorTypeEnum.WAIT_RAND,
 }
 
 const color_dict: Dictionary = {

@@ -7,6 +7,13 @@ extends CharacterBody3D
 
 var target_position: Vector3 = Vector3.ZERO
 
+var _is_ready: bool = false
+
+func _ready() -> void:
+	(await get_tree().process_frame) 
+	_is_ready = true
+	
+
 # ================================================================
 func task_find_target(task: Task) -> void:
 	var points: Array[Marker3D] = patrol_points.get_markers()
@@ -19,6 +26,9 @@ func task_find_target(task: Task) -> void:
 	task.success()
 
 func move_to_target(task: Task) -> void:
+	if not _is_ready: 
+		return
+	
 	if navigation_agent.is_navigation_finished():
 		return
 	

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://djwkm0jfuuspq"]
+
+[ext_resource type="Script" path="res://addons/behave/src/gui/engine/common/range/range_input.gd" id="1_ok44a"]
+
+[node name="RangeInput" type="HBoxContainer"]
+script = ExtResource("1_ok44a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Range: "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="FromSpinBox" type="SpinBox" parent="VBoxContainer"]
+layout_mode = 2
+rounded = true
+allow_greater = true
+
+[node name="ToSpinBox" type="SpinBox" parent="VBoxContainer"]
+layout_mode = 2
+rounded = true
+allow_greater = true
