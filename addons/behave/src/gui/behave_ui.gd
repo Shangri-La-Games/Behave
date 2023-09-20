@@ -9,7 +9,8 @@ const element_dict: Dictionary = {
 	"Parallel": Behave.BehaviorTypeEnum.PARALLEL,
 	"Sequence": Behave.BehaviorTypeEnum.SEQUENCE,
 	"Task": Behave.BehaviorTypeEnum.TASK,
-	"Wait": Behave.BehaviorTypeEnum.WAIT
+	"Wait": Behave.BehaviorTypeEnum.WAIT,
+	"Mute": Behave.BehaviorTypeEnum.MUTE,
 }
 
 const color_dict: Dictionary = {

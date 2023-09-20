@@ -34,10 +34,12 @@ func add_input_slot() -> void:
 		null, null
 	)
 
-func add_label() -> void:
+func add_label(show_count = true) -> void:
 	var label = Label.new()
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	label.text = str(get_child_count())
+
+	if show_count:
+		label.text = str(get_child_count())
 	
 	self.add_child(label)
 

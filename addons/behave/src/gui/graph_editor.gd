@@ -120,6 +120,10 @@ func _on_save_request():
 	
 	hint.text = "Tree saved"
 	
+	# Refresh graph on save
+	_clear()
+	_build_tree_from_source()
+
 func _find_element_by_name(elements, name) -> Dictionary:
 	for element in elements:
 		if element.name == name: 

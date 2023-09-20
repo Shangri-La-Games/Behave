@@ -1,7 +1,7 @@
-class_name Inverter extends Decorator
+class_name Mute extends Decorator
 
 """ 
-The inverter decorator inverts SUCCESS with FAIURE and vice versa.
+The mute decorator is never return FAILURE.
 """
 func tick() -> Behave.StateEnum:
 	ticked = true
@@ -16,8 +16,5 @@ func tick() -> Behave.StateEnum:
 	var result = child.tick()
 	if result == Behave.StateEnum.RUNNING:
 			return status
-	
-	if result == Behave.StateEnum.SUCCESS:
-			return failed()
 	
 	return success()

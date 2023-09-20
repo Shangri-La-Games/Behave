@@ -13,7 +13,7 @@ func set_properties(properties: Dictionary):
 	if type == Behave.BehaviorTypeEnum.REPEATER:
 		self.add_number_input("Count: ", self._count)
 	else:
-		self.add_label()
+		self.add_label(false)
 	
 	self.add_input_output_slot()
 

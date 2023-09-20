@@ -14,7 +14,6 @@ func task_find_target(task: Task) -> void:
 	patrol_points.set_active_point(next_point)
 	
 	target_position = next_point.global_position
-	print("NEXT_POINT >> ", target_position)
 	navigation_agent.set_target_position(target_position)
 	
 	task.success()
@@ -29,7 +28,6 @@ func move_to_target(task: Task) -> void:
 	move_and_slide()
 	
 	if navigation_agent.is_target_reached():
-		print("TARGET_REACHED")
 		task.success()
 
 func _set_lookat_direction(current: Vector3, target: Vector3):

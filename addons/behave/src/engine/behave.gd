@@ -14,7 +14,8 @@ enum BehaviorTypeEnum {
 	PARALLEL,
 	SEQUENCE,
 	TASK,
-	WAIT
+	WAIT,
+	MUTE
 }
 
 static var behaviors = {}
@@ -25,6 +26,7 @@ static func get_behaviors() -> Dictionary:
 	behaviors[BehaviorTypeEnum.ROOT] = Root
 	behaviors[BehaviorTypeEnum.INVERTER] = Inverter
 	behaviors[BehaviorTypeEnum.REPEATER] = Repeater
+	behaviors[BehaviorTypeEnum.MUTE] = Mute
 	
 	# Composite
 	behaviors[BehaviorTypeEnum.SELECTOR] = Selector
